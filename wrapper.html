@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			/*border:1px solid red;*/
+		}
+		body {
+			margin: 0;
+		}
+		html, body {
+			height: 100%;
+		}
+		#wrapper {
+			max-width: 80vh;
+			height: 100%;
+			margin: 0 auto;
+			background-color: red;
+			border: 5px dotted yellow
+		}
+		header, footer {
+			background-color: #666;
+		}
+		header {
+			min-height: 44px;
+		}
+		main {
+			background-color: #ccc;
+		}
+		footer {
+
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<header>header</header>
+		<main>main</main>
+		<footer>footer</footer>
+	</div>
+	<script>
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+	</script>
+</body>
+</html>
