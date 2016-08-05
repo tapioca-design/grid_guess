@@ -3,47 +3,338 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/main.js"></script>
 	<title>Document</title>
-	<style>
-		* {
-			/*border:1px solid red;*/
-		}
-		body {
-			margin: 0;
-		}
-		html, body {
-			height: 100%;
-		}
-		#wrapper {
-			max-width: 80vh;
-			height: 100%;
-			margin: 0 auto;
-			background-color: red;
-			border: 5px dotted yellow
-		}
-		header, footer {
-			background-color: #666;
-		}
-		header {
-			min-height: 44px;
-		}
-		main {
-			background-color: #ccc;
-		}
-		footer {
-
-		}
-	</style>
+	<link rel="stylesheet" href="css/screen.css">
 </head>
 <body>
 	<div id="wrapper">
-		<header>header</header>
-		<main>main</main>
-		<footer>footer</footer>
+		<header>
+			<nav>
+				<a href="#">
+					<img src="svg/menu.svg" alt="">
+				</a>
+			</nav>
+			<h1>
+				This word is <span class="">very easy</span> to guess
+			</h1>
+			<nav>
+				<a href="#">
+					<img src="svg/menu.svg" alt="">
+				</a>
+			</nav>
+		</header>
+
+
+
+
+
+
+
+
+		<!-- <main id="grid" class="grid-4-tiles">
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+		</main> -->
+
+
+
+
+
+		<main id="grid" class="grid-6-tiles">
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+		</main>
+
+
+
+
+<!-- 
+
+		<main id="grid" class="grid-8-tiles">
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+		</main>
+ -->
+
+
+
+<!-- 
+
+		<main id="grid" class="grid-9-tiles">
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+			<div>
+				<div class="tile">
+					<img src="svg/tile.svg">
+				</div>
+				
+				
+			</div>
+		</main>
+ -->
+
+
+
+
+
+
+
+
+		<section id="keyboard">
+			<div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+			</div>
+			<div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+				<div class="key">
+					<a href="">A</a>
+					<div class="empty"></div>
+				</div>
+			</div>
+		</section>
+		<footer></footer>
 	</div>
-	<script>
-		var width = window.innerWidth;
-		var height = window.innerHeight;
-	</script>
 </body>
 </html>
