@@ -1,144 +1,237 @@
-		* {
-			/*border:1px solid red;*/
-		}
-		body {
-			margin: 0;
-			font-family: sans-serif;
-			/*background-color: blue;*/
 
-			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eeeeee+0,cccccc+50,eeeeee+100 */
-			background: #eeeeee; /* Old browsers */
-			background: -moz-linear-gradient(left,  #555 0%, #222 50%, #555 100%); /* FF3.6-15 */
-			background: -webkit-linear-gradient(left,  #555 0%,#222 50%,#555 100%); /* Chrome10-25,Safari5.1-6 */
-			background: linear-gradient(to right,  #555 0%,#222 50%,#555 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 ); /* IE6-9 */
 
-		}
-		html, body {
-			height: 100%;
-		}
-		#wrapper {
-			max-width: 80vh;
-			height: 100%;
-			margin: 0 auto;
-			background-color: red;
-			/*border: 5px dotted yellow*/
-		}
-		header {
-			position: relative;
-			min-height: 44px;
-			background-color: black;
-			h1 {
-				text-align: center;
-				font-weight: normal;
-				font-size: 0.8rem;
-				color:white;
-				margin: 0;
-				padding-top: 12px;
-			}
-			nav a {
-				/*display: block;*/
-				/*float: right;*/
-				position: absolute;
-				top: 0;
-				right: 0;
-				color:white;
-				text-decoration: none;
-				img {
-					width: 24px;
-					height: 24px;
-					padding:10px 5px;
+
+@font-face {
+	font-family: 'Futura book';
+	src: url('../fonts/futura/futura-book.eot');
+	src: url('../fonts/futura/futura-book.woff2') format('woff2'),
+	url('../fonts/futura/futura-book.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/futura/futura-book.woff') format('woff'),
+	url('../fonts/futura/futura-book.ttf') format('truetype'),
+	url('../fonts/futura/futura-book.svg#FuturaBT-Book') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Futura black';
+	src: url('../fonts/futura/Futura Extra Black font.eot');
+	src: url('../fonts/futura/Futura Extra Black font.woff2') format('woff2'),
+	url('../fonts/futura/Futura Extra Black font.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/futura/Futura Extra Black font.woff') format('woff'),
+	url('../fonts/futura/Futura Extra Black font.ttf') format('truetype'),
+	url('../fonts/futura/Futura Extra Black font.svg#FuturaBT-Book') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Futura light';
+	src: url('../fonts/futura/futura light bt.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
+			/**, body {
+				font-family: 'Futura light' !important;
+				}*/
+				html {
+					font-size: 16px;
 				}
-			}
-		}
-		
-		
-		
-		
-		#grid {
-			/*background-color: #ccc;*/
-			height: 80vh;
-			.picture {
-				
-				/*border: 1px solid white;*/
-			}
-			&>div {
-				/*border: 1px solid blue;*/
-				/*display: block;*/
-				float: left;
-				.tile {
-					/*border: 1px solid yellow;*/
-					display: flex;
-					img {
-						width: 100%;
-						/*height: 100%;*/
+
+
+				html, body {
+					height: 100%;
+				}
+
+				body {
+					font-family: 'Futura light' !important;
+
+					margin: 0;
+
+
+					background: #eeeeee;
+					background: -moz-linear-gradient(left,  #555 0%, #222 50%, #555 100%); 
+					background: -webkit-linear-gradient(left,  #555 0%,#222 50%,#555 100%); 
+					background: linear-gradient(to right,  #555 0%,#222 50%,#555 100%); 
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 ); 
+
+					b {
+						font-family: "Futura black", sans-serif;
 					}
-				}
-			}
-			&.grid-4-tiles {
-				& > div {
-					width:50%;
-				}
-			}
-			&.grid-6-tiles {
-				& > div {
-					width:50%;
-				}
-			}
-			&.grid-8-tiles {
-				& > div {
-					width:25%;
 
-				}
-			}
-			&.grid-9-tiles {
-				& > div {
-					width:33%;
-				}
-			}
-			&.grid-10-tiles {
-				& > div {
-					width:20%;
-				}
-			}
-		}
-		
+					#wrapper {
+						position: relative;
+						max-width: 80vh;
+						height: 100%;
+						margin: 0 auto;
+						background-color: black;
+						/*border: 5px dotted yellow*/
 
-		#keyboard {
-			clear: both;
-			& > div {
-				display: flex;
-				justify-content:space-around;
-				/*border: 1px solid blue;*/
-				height: 44px;
-				.key {
-					display: flex;
-					width: 100%;
-					/*height: 44px;*/
-					float: left;
-					text-align: center;
-					/*border: 1px solid white;*/
-					a {
-						display: block;
-						width: 100%;
-						/*min-height: 44px;*/
-						/*height: 100%;*/
-						/*padding-top: 13px;*/
-						color:black;
-						text-decoration: none;
-						background-color: #ccc;
-						border: 1px solid white;
-						&:before{
-							content:"";
-							display: block;
-							padding-top:13px;
+						#menu {
+							display: none;
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							background-color: black;
+							color: white;
+							header {
+								nav {
+									width: 10%;
+									float: right;
+									text-align: right;
+									a {
+										display: block;
+										img {
+											width: 24px;
+											height: 24px;
+											padding:10px 5px 0 0;
+										}
+									}
+								}
+							}
+							main {
+								padding: 0 5px;
+							}
 						}
-					}
-					.empty {
-						display: none;
-					}
-				}
-			}
+
+						header {
+							/*position: relative;*/
+							min-height: 44px;
+							background-color: black;
+							h1 {
+								width: 80%;
+								float: left;
+								text-align: center;
+								font-weight: normal;
+								font-size: 1rem;
+								color:white;
+								margin: 0;
+								padding-top: 15px;
+							}
+							nav {
+								width: 10%;
+								a {
+									display: block;
+									img {
+										width: 24px;
+										height: 24px;
+
+									}
+								}
+							}
+							nav:nth-child(1) {
+								float: left;
+								a {
+									img {
+										padding:10px 0 0 5px;
+									}
+								}
+							}
+							nav:nth-child(3) {
+								float: right;
+								text-align: right;
+								a {
+									img {
+										padding:10px 5px 0 0;
+									}
+								}
+							}
+						}
+
+						#grid {
+							clear: both;
+							/*background-color: #ccc;*/
+							/*height: 80vh;*/
+							overflow: auto;
+							/*border: 1px dotted yellow;*/
+							.picture {		
+								/*border: 1px solid white;*/
+							}
+							&>div {
+								/*border: 1px solid blue;*/
+								/*display: block;*/
+								float: left;
+								.tile {
+									/*border: 1px solid yellow;*/
+									display: flex;
+									img {
+										width: 100%;
+										/*height: 100%;*/
+									}
+								}
+							}
+							&.grid-4-tiles {
+								display: none;
+								& > div {
+									width:50%;
+								}
+							}
+							&.grid-6-tiles {
+								display: none;
+								& > div {
+									width:50%;
+								}
+							}
+							&.grid-8-tiles {
+								display: none;
+								& > div {
+									width:25%;
+
+								}
+							}
+							&.grid-9-tiles {
+								display: none;
+								& > div {
+									width:33.333%;
+								}
+							}
+							&.grid-10-tiles {
+								/*display: none;*/
+								& > div {
+									width:20%;
+								}
+							}
+						}
+
+
+						#keyboard {
+							clear: both;
+							& > div {
+								display: flex;
+								justify-content:space-around;
+								/*border: 1px solid blue;*/
+								height: 44px;
+								.key {
+									display: flex;
+									width: 100%;
+									/*height: 44px;*/
+									float: left;
+									text-align: center;
+									/*border: 1px solid white;*/
+									a {
+										display: block;
+										width: 100%;
+										font-size: 2rem;
+										/*min-height: 44px;*/
+										/*height: 100%;*/
+										/*padding-top: 13px;*/
+										color:black;
+										text-decoration: none;
+										background-color: #ccc;
+										border: 1px solid #ddd;
+										&:before{
+											content:"";
+											display: block;
+											padding-top:2px;
+										}
+									}
+									.empty {
+										display: none;
+									}
+								}
+							}
 			/*& > div:nth-child(1) {
 				.key a {
 					border:1px solid white;
@@ -151,12 +244,83 @@
 					border-bottom:1px solid white;
 					border-left:1px solid white;
 				}
-			}*/
+				}*/
 
-		}
-		
-		
-		footer {
-			clear: both;
-		}
+			}
 
+
+			footer {
+				clear: both;
+				color: #666;
+				padding: 10px 0;
+				text-align: center;
+				h2 {
+					font-size: 1rem;
+					margin: 0;
+				}
+				#level {
+					/*section {
+						text-align: center;
+						border: 1px solid yellow;
+						list-style: none;
+						margin: 0;
+						padding: 0;
+						div {
+							width: 1%;
+							height: 44px;
+							margin: 0;
+							padding: 0;
+							display: inline-block;
+							border: 1px solid white;
+						}
+					}*/
+					text-align: center;
+					& > div {
+						border: 1px solid pink;
+						width: 10%;
+						font-size: 1.2rem;
+						font-family: "Futura black", sans-serif;
+					}
+					#level-from {
+						float: left;
+
+					}
+					#level-to {
+						float: right;
+					}
+					ul {
+						/*display: flex;
+						justify-content:space-around;*/
+						border: 1px solid yellow;
+						list-style: none;
+						margin: 10px 0 0 0;
+						padding: 0;
+						width: 80%;
+						display: flex;
+						justify-content:center;
+						li {
+							width: 4.4px;
+							height: 4.4px;
+							margin: 1px;
+							padding: 0;
+							display: flex;
+							/*float: left;*/
+							
+							&.filled {
+								background-color: #333;
+								border: 1px solid #333;
+							}
+							&.current {
+								background-color: #ccc;
+								border: 1px solid #ccc;
+							}
+							&.empty {
+								border: 1px solid #666;
+							}
+						}
+					}
+					
+				}
+			}
+		}
+	}
