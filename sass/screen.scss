@@ -29,298 +29,273 @@
 	font-weight: normal;
 	font-style: normal;
 }
+html, body {
+	font-size: 16px;
+}
 
+html, body {
+	height: 100%;
+}
 
+body {
+	font-family: 'Futura light' !important;
+	margin: 0;
+	background: #eeeeee;
+	background: -moz-linear-gradient(left,  #555 0%, #222 50%, #555 100%); 
+	background: -webkit-linear-gradient(left,  #555 0%,#222 50%,#555 100%); 
+	background: linear-gradient(to right,  #555 0%,#222 50%,#555 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 ); 
 
+	b {
+		font-family: "Futura black", sans-serif;
+	}
 
-			/**, body {
-				font-family: 'Futura light' !important;
-				}*/
-				html {
-					font-size: 16px;
-				}
-
-
-				html, body {
-					height: 100%;
-				}
-
-				body {
-					font-family: 'Futura light' !important;
-
-					margin: 0;
-
-
-					background: #eeeeee;
-					background: -moz-linear-gradient(left,  #555 0%, #222 50%, #555 100%); 
-					background: -webkit-linear-gradient(left,  #555 0%,#222 50%,#555 100%); 
-					background: linear-gradient(to right,  #555 0%,#222 50%,#555 100%); 
-					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#eeeeee',GradientType=1 ); 
-
-					b {
-						font-family: "Futura black", sans-serif;
+	#wrapper {
+		position: relative;
+		max-width: 80vh;
+		height: 100%;
+		margin: 0 auto;
+		/*background-color: black;*/
+		background-image: url('../images/whirl_tall.gif');
+		background-size: cover;
+		#menu {
+			display: none;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			color: white;
+			header {
+				nav {
+					width: 10%;
+					float: right;
+					text-align: right;
+					a {
+						display: block;
+						img {
+							width: 24px;
+							height: 24px;
+							padding:10px 5px 0 0;
+						}
 					}
-
-					#wrapper {
-						position: relative;
-						max-width: 80vh;
-						height: 100%;
-						margin: 0 auto;
-						background-color: black;
-						/*border: 5px dotted yellow*/
-
-						#menu {
-							display: none;
-							position: absolute;
-							width: 100%;
-							height: 100%;
-							background-color: black;
-							color: white;
-							header {
-								nav {
-									width: 10%;
-									float: right;
-									text-align: right;
-									a {
-										display: block;
-										img {
-											width: 24px;
-											height: 24px;
-											padding:10px 5px 0 0;
-										}
-									}
-								}
-							}
-							main {
-								padding: 0 5px;
-							}
-						}
-
-						header {
-							/*position: relative;*/
-							min-height: 44px;
-							background-color: black;
-							h1 {
-								width: 80%;
-								float: left;
-								text-align: center;
-								font-weight: normal;
-								font-size: 1rem;
-								color:white;
-								margin: 0;
-								padding-top: 15px;
-							}
-							nav {
-								width: 10%;
-								a {
-									display: block;
-									img {
-										width: 24px;
-										height: 24px;
-
-									}
-								}
-							}
-							nav:nth-child(1) {
-								float: left;
-								a {
-									img {
-										padding:10px 0 0 5px;
-									}
-								}
-							}
-							nav:nth-child(3) {
-								float: right;
-								text-align: right;
-								a {
-									img {
-										padding:10px 5px 0 0;
-									}
-								}
-							}
-						}
-
-						#grid {
-							clear: both;
-							/*background-color: #ccc;*/
-							/*height: 80vh;*/
-							overflow: auto;
-							/*border: 1px dotted yellow;*/
-							.picture {		
-								/*border: 1px solid white;*/
-							}
-							&>div {
-								/*border: 1px solid blue;*/
-								/*display: block;*/
-								float: left;
-								.tile {
-									/*border: 1px solid yellow;*/
-									display: flex;
-									img {
-										width: 100%;
-										/*height: 100%;*/
-									}
-								}
-							}
-							&.grid-4-tiles {
-								display: none;
-								& > div {
-									width:50%;
-								}
-							}
-							&.grid-6-tiles {
-								display: none;
-								& > div {
-									width:50%;
-								}
-							}
-							&.grid-8-tiles {
-								display: none;
-								& > div {
-									width:25%;
-
-								}
-							}
-							&.grid-9-tiles {
-								display: none;
-								& > div {
-									width:33.333%;
-								}
-							}
-							&.grid-10-tiles {
-								/*display: none;*/
-								& > div {
-									width:20%;
-								}
-							}
-						}
-
-
-						#keyboard {
-							clear: both;
-							& > div {
-								display: flex;
-								justify-content:space-around;
-								/*border: 1px solid blue;*/
-								height: 44px;
-								.key {
-									display: flex;
-									width: 100%;
-									/*height: 44px;*/
-									float: left;
-									text-align: center;
-									/*border: 1px solid white;*/
-									a {
-										display: block;
-										width: 100%;
-										font-size: 2rem;
-										/*min-height: 44px;*/
-										/*height: 100%;*/
-										/*padding-top: 13px;*/
-										color:black;
-										text-decoration: none;
-										background-color: #ccc;
-										border: 1px solid #ddd;
-										&:before{
-											content:"";
-											display: block;
-											padding-top:2px;
-										}
-									}
-									.empty {
-										display: none;
-									}
-								}
-							}
-			/*& > div:nth-child(1) {
-				.key a {
-					border:1px solid white;
 				}
-				
 			}
-			& > div:nth-child(2) {
-				.key a {
-					border-right:1px solid white;
-					border-bottom:1px solid white;
-					border-left:1px solid white;
-				}
-				}*/
-
+			main {
+				padding: 0 5px;
 			}
+		}
 
-
-			footer {
-				clear: both;
-				color: #666;
-				padding: 10px 0;
+		header {
+			min-height: 44px;
+			background-color: black;
+			h1 {
+				width: 80%;
+				float: left;
 				text-align: center;
-				h2 {
-					font-size: 1rem;
-					margin: 0;
-				}
-				#level {
-					/*section {
-						text-align: center;
-						border: 1px solid yellow;
-						list-style: none;
-						margin: 0;
-						padding: 0;
-						div {
-							width: 1%;
-							height: 44px;
-							margin: 0;
-							padding: 0;
-							display: inline-block;
-							border: 1px solid white;
-						}
-					}*/
-					text-align: center;
-					& > div {
-						border: 1px solid pink;
-						width: 10%;
-						font-size: 1.2rem;
-						font-family: "Futura black", sans-serif;
-					}
-					#level-from {
-						float: left;
+				font-weight: normal;
+				font-size: 1rem;
+				color:white;
+				margin: 0;
+				padding-top: 15px;
+			}
+			nav {
+				width: 10%;
+				a {
+					display: block;
+					img {
+						width: 24px;
+						height: 24px;
 
 					}
-					#level-to {
-						float: right;
+				}
+			}
+			nav:nth-child(1) {
+				float: left;
+				a {
+					img {
+						padding:10px 0 0 5px;
 					}
-					ul {
-						/*display: flex;
-						justify-content:space-around;*/
-						border: 1px solid yellow;
-						list-style: none;
-						margin: 10px 0 0 0;
-						padding: 0;
-						width: 80%;
-						display: flex;
-						justify-content:center;
-						li {
-							width: 4.4px;
-							height: 4.4px;
-							margin: 1px;
-							padding: 0;
-							display: flex;
-							/*float: left;*/
-							
-							&.filled {
-								background-color: #333;
-								border: 1px solid #333;
-							}
-							&.current {
-								background-color: #ccc;
-								border: 1px solid #ccc;
-							}
-							&.empty {
-								border: 1px solid #666;
-							}
+				}
+			}
+			nav:nth-child(3) {
+				float: right;
+				text-align: right;
+				a {
+					img {
+						padding:10px 5px 0 0;
+					}
+				}
+			}
+		}
+
+		#grid {
+			clear: both;
+			overflow: auto;
+			.picture {		
+			}
+			&>div {
+				float: left;
+				.tile {
+					display: flex;
+					border:1px solid red;
+					.pyramid {
+						display: none;
+						width: 100%;
+					}
+					.picture {
+						display: none;
+						width: 100%;
+						background-position: center center;
+						background-size: cover;
+					}
+					label {
+						/*display: none;*/
+						font-size: 3.4rem;
+						text-align: center;
+						width: 100%;
+						&:before {
+							content:"";
+							display: block;
+							height: 10%;
 						}
+
 					}
 					
 				}
 			}
+			&.grid-4-tiles {
+				display: none;
+				& > div {
+					width:50%;
+				}
+			}
+			&.grid-6-tiles {
+				/*display: none;*/
+				& > div {
+					width:50%;
+				}
+			}
+			&.grid-8-tiles {
+				display: none;
+				& > div {
+					width:25%;
+
+				}
+			}
+			&.grid-9-tiles {
+				display: none;
+				& > div {
+					width:33.333%;
+				}
+			}
+			&.grid-10-tiles {
+				display: none;
+				& > div {
+					width:20%;
+				}
+			}
+
+
+			/*state where letters form a word*/
+			&.round-end {
+				
+			}
+
+
+
+
+
+		}
+
+
+		#keyboard {
+			clear: both;
+			& > div {
+				display: flex;
+				justify-content:space-around;
+				height: 44px;
+				.key {
+					display: flex;
+					width: 100%;
+					float: left;
+					text-align: center;
+					a {
+						display: block;
+						width: 100%;
+						font-size: 2rem;
+						color:black;
+						text-decoration: none;
+						background-color: #ccc;
+						border: 1px solid #ddd;
+						&:before{
+							content:"";
+							display: block;
+							padding-top:2px;
+						}
+					}
+					.empty {
+						display: none;
+					}
+				}
+			}
+		}
+
+
+		footer {
+			clear: both;
+			color: #666;
+			padding: 10px 0;
+			text-align: center;
+			background-color: black;
+			height: inherit;
+			h2 {
+				font-size: 1rem;
+				margin: 0;
+			}
+			#level {
+				text-align: center;
+				& > div {
+					border: 1px solid pink;
+					width: 10%;
+					font-size: 1.2rem;
+					font-family: "Futura black", sans-serif;
+				}
+				#level-from {
+					float: left;
+
+				}
+				#level-to {
+					float: right;
+				}
+				ul {
+					border: 1px solid yellow;
+					list-style: none;
+					margin: 10px 0 0 0;
+					padding: 0;
+					width: 80%;
+					display: flex;
+					justify-content:center;
+					li {
+						width: 4.4px;
+						height: 4.4px;
+						margin: 1px;
+						padding: 0;
+						display: flex;							
+						&.filled {
+							background-color: #333;
+							border: 1px solid #333;
+						}
+						&.current {
+							background-color: #ccc;
+							border: 1px solid #ccc;
+						}
+						&.empty {
+							border: 1px solid #666;
+						}
+					}
+				}
+				
+			}
 		}
 	}
+}

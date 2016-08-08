@@ -15,10 +15,7 @@
   src: url("../fonts/futura/futura light bt.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
-/**, body {
-	font-family: 'Futura light' !important;
-	}*/
-html {
+html, body {
   font-size: 16px; }
 
 html, body {
@@ -39,8 +36,9 @@ body {
     max-width: 80vh;
     height: 100%;
     margin: 0 auto;
-    background-color: black;
-    /*border: 5px dotted yellow*/ }
+    /*background-color: black;*/
+    background-image: url("../images/whirl_tall.gif");
+    background-size: cover; }
     body #wrapper #menu {
       display: none;
       position: absolute;
@@ -61,7 +59,6 @@ body {
       body #wrapper #menu main {
         padding: 0 5px; }
     body #wrapper header {
-      /*position: relative;*/
       min-height: 44px;
       background-color: black; }
       body #wrapper header h1 {
@@ -91,28 +88,36 @@ body {
           padding: 10px 5px 0 0; }
     body #wrapper #grid {
       clear: both;
-      /*background-color: #ccc;*/
-      /*height: 80vh;*/
       overflow: auto;
-      /*border: 1px dotted yellow;*/ }
-      body #wrapper #grid .picture {
-        /*border: 1px solid white;*/ }
+      /*state where letters form a word*/ }
       body #wrapper #grid > div {
-        /*border: 1px solid blue;*/
-        /*display: block;*/
         float: left; }
         body #wrapper #grid > div .tile {
-          /*border: 1px solid yellow;*/
-          display: flex; }
-          body #wrapper #grid > div .tile img {
+          display: flex;
+          border: 1px solid red; }
+          body #wrapper #grid > div .tile .pyramid {
+            display: none;
+            width: 100%; }
+          body #wrapper #grid > div .tile .picture {
+            display: none;
             width: 100%;
-            /*height: 100%;*/ }
+            background-position: center center;
+            background-size: cover; }
+          body #wrapper #grid > div .tile label {
+            /*display: none;*/
+            font-size: 3.4rem;
+            text-align: center;
+            width: 100%; }
+            body #wrapper #grid > div .tile label:before {
+              content: "";
+              display: block;
+              height: 10%; }
       body #wrapper #grid.grid-4-tiles {
         display: none; }
         body #wrapper #grid.grid-4-tiles > div {
           width: 50%; }
       body #wrapper #grid.grid-6-tiles {
-        display: none; }
+        /*display: none;*/ }
         body #wrapper #grid.grid-6-tiles > div {
           width: 50%; }
       body #wrapper #grid.grid-8-tiles {
@@ -124,43 +129,24 @@ body {
         body #wrapper #grid.grid-9-tiles > div {
           width: 33.333%; }
       body #wrapper #grid.grid-10-tiles {
-        /*display: none;*/ }
+        display: none; }
         body #wrapper #grid.grid-10-tiles > div {
           width: 20%; }
     body #wrapper #keyboard {
-      clear: both;
-      /*& > div:nth-child(1) {
-      	.key a {
-      		border:1px solid white;
-      	}
-      	
-      }
-      & > div:nth-child(2) {
-      	.key a {
-      		border-right:1px solid white;
-      		border-bottom:1px solid white;
-      		border-left:1px solid white;
-      	}
-      	}*/ }
+      clear: both; }
       body #wrapper #keyboard > div {
         display: flex;
         justify-content: space-around;
-        /*border: 1px solid blue;*/
         height: 44px; }
         body #wrapper #keyboard > div .key {
           display: flex;
           width: 100%;
-          /*height: 44px;*/
           float: left;
-          text-align: center;
-          /*border: 1px solid white;*/ }
+          text-align: center; }
           body #wrapper #keyboard > div .key a {
             display: block;
             width: 100%;
             font-size: 2rem;
-            /*min-height: 44px;*/
-            /*height: 100%;*/
-            /*padding-top: 13px;*/
             color: black;
             text-decoration: none;
             background-color: #ccc;
@@ -175,26 +161,13 @@ body {
       clear: both;
       color: #666;
       padding: 10px 0;
-      text-align: center; }
+      text-align: center;
+      background-color: black;
+      height: inherit; }
       body #wrapper footer h2 {
         font-size: 1rem;
         margin: 0; }
       body #wrapper footer #level {
-        /*section {
-        	text-align: center;
-        	border: 1px solid yellow;
-        	list-style: none;
-        	margin: 0;
-        	padding: 0;
-        	div {
-        		width: 1%;
-        		height: 44px;
-        		margin: 0;
-        		padding: 0;
-        		display: inline-block;
-        		border: 1px solid white;
-        	}
-        }*/
         text-align: center; }
         body #wrapper footer #level > div {
           border: 1px solid pink;
@@ -206,8 +179,6 @@ body {
         body #wrapper footer #level #level-to {
           float: right; }
         body #wrapper footer #level ul {
-          /*display: flex;
-          justify-content:space-around;*/
           border: 1px solid yellow;
           list-style: none;
           margin: 10px 0 0 0;
@@ -220,8 +191,7 @@ body {
             height: 4.4px;
             margin: 1px;
             padding: 0;
-            display: flex;
-            /*float: left;*/ }
+            display: flex; }
             body #wrapper footer #level ul li.filled {
               background-color: #333;
               border: 1px solid #333; }
