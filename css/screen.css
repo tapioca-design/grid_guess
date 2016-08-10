@@ -35,6 +35,7 @@ body {
     height: 100%;
     margin: 0 auto;
     background-color: brown;
+    /*background-image: url('../images/whirl_tall.gif');*/
     background-size: cover; }
     body #wrapper #menu {
       display: none;
@@ -88,11 +89,24 @@ body {
       overflow: auto;
       position: relative;
       /*state where letters form a word*/
-      /* #grid */ }
+      /* #grid */
+      /*// @keyframes example {*/
+      /*//     from {*/
+      /*//     	display: flex !important;*/
+      /*// 		align-items: center !important;*/
+      /*// 				justify-content: center !important;*/
+      /*//     }*/
+      /*//     to {*/
+      /*//     	display: flex !important;*/
+      /*// 		align-items: center !important;*/
+      /*// 				justify-content: center !important;*/
+      /*//     }*/
+      /*// }*/ }
       body #wrapper .grid > div {
         float: left; }
         body #wrapper .grid > div .tile {
-          display: flex; }
+          display: flex;
+          /*border:1px solid red;*/ }
           body #wrapper .grid > div .tile .pyramid {
             display: none;
             width: 100%; }
@@ -126,21 +140,50 @@ body {
         display: none; }
         body #wrapper .grid.grid-9-tiles > div {
           width: 33.333%; }
-      body #wrapper .grid.grid-10-tiles > div {
-        width: 20%; }
+      body #wrapper .grid.grid-10-tiles {
+        /*display: none;*/ }
+        body #wrapper .grid.grid-10-tiles > div {
+          width: 20%; }
       body #wrapper .grid.round-end {
-        animation-name: example;
-        animation-duration: 4s;
         display: flex;
-        align-items: center;
-        justify-content: center; }
-        body #wrapper .grid.round-end > div, body #wrapper .grid.round-end > div .tile, body #wrapper .grid.round-end > div .tile > * {
-          width: 30px;
-          height: 30px !important;
-          padding: 0 1px; }
-        body #wrapper .grid.round-end > div .tile label {
-          font-family: "Futura book";
-          font-size: 20px; }
+        /*align-items: center;*/
+        /*justify-content: center;*/
+        animation-name: example;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+        /*animation-delay: 2s;*/
+        /*animation-direction: reverse;*/
+        /*animation-direction: alternate;*/ }
+        body #wrapper .grid.round-end > div {
+          /*border:1px solid yellow;*/ }
+          body #wrapper .grid.round-end > div, body #wrapper .grid.round-end > div .tile, body #wrapper .grid.round-end > div .tile > * {
+            /*width: 30px;*/
+            /*height: 30px !important;*/
+            /*padding: 0 1px;*/
+            animation-name: example1;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards; }
+          body #wrapper .grid.round-end > div .tile {
+            /*// border:1px solid orange;*/ }
+            body #wrapper .grid.round-end > div .tile label {
+              font-family: "Futura book";
+              /*// font-size: 20px;*/
+              animation-name: example2;
+              animation-duration: 2s;
+              animation-timing-function: ease;
+              animation-fill-mode: forwards; }
+@keyframes example1 {
+  /*// from {background-color: red;}*/
+  to {
+    width: 30px;
+    height: 30px !important;
+    padding: 0 1px; } }
+@keyframes example2 {
+  /*// from {background-color: red;}*/
+  to {
+    font-size: 20px; } }
     body #wrapper #keyboard {
       clear: both; }
       body #wrapper #keyboard > div {

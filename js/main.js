@@ -38,9 +38,13 @@ $( document ).ready(function() {
 
 
 
-		  	$( window ).resize(function() {
-			  	setGridHeight();
-			});
+		 //  	$( window ).resize(function() {
+			//   	setGridHeight();
+			// });
+
+			window.resize = function() {
+				setGridHeight();
+			}
 
 
 

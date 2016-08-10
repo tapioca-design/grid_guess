@@ -54,7 +54,7 @@ body {
 		height: 100%;
 		margin: 0 auto;
 		background-color: brown;
-		// background-image: url('../images/whirl_tall.gif');
+		/*background-image: url('../images/whirl_tall.gif');*/
 		background-size: cover;
 		#menu {
 			display: none;
@@ -136,7 +136,7 @@ body {
 				float: left;
 				.tile {
 					display: flex;
-					// border:1px solid red;
+					/*border:1px solid red;*/
 					.pyramid {
 						display: none;
 						width: 100%;
@@ -188,7 +188,7 @@ body {
 				}
 			}
 			&.grid-10-tiles {
-				// display: none;
+				/*display: none;*/
 				& > div {
 					width:20%;
 				}
@@ -198,36 +198,72 @@ body {
 			/*state where letters form a word*/
 			/* #grid */
 			&.round-end {
-				animation-name: example;
-    			animation-duration: 4s;
-
 				display: flex;
-				align-items: center;
-  				justify-content: center;
+				 /*align-items: center;*/
+  				 /*justify-content: center;*/
+
+  				animation-name: example;
+   				animation-duration: 2s;
+   				animation-timing-function: ease;
+   				animation-fill-mode: forwards;
+   				/*animation-delay: 2s;*/
+   				/*animation-direction: reverse;*/
+   				/*animation-direction: alternate;*/
+
 				&>div {
-					// border:1px solid yellow;
+					/*border:1px solid yellow;*/
 					&, & .tile, & .tile > * {
-						width: 30px;
-						height: 30px !important;
-						padding: 0 1px;
+						/*width: 30px;*/
+						/*height: 30px !important;*/
+						/*padding: 0 1px;*/
+						animation-name: example1;
+   						animation-duration: 2s;
+   						animation-timing-function: ease;
+   						animation-fill-mode: forwards;
+
 					}
 					.tile {
-						// border:1px solid orange;
+						/*// border:1px solid orange;*/
 						label {
 							font-family: "Futura book";
-							font-size: 20px;
+							/*// font-size: 20px;*/
+							animation-name: example2;
+   							animation-duration: 2s;
+   							animation-timing-function: ease;
+   							animation-fill-mode: forwards;
 						}
 					}
 
 				}
-				// -webkit-transition: all 1s ease-in-out;
-			 //    -moz-transition: all 1s ease-in; 
-			 //    -o-transition: all 1s ease-in;
-			 //    -ms-transition: all 1s ease-in; 
-			 //    transition: all 1s ease-in; 
-			}
-			
 
+			}
+			/*// @keyframes example {*/
+			/*//     from {*/
+			/*//     	display: flex !important;*/
+			/*// 		align-items: center !important;*/
+  	/*// 				justify-content: center !important;*/
+			/*//     }*/
+			/*//     to {*/
+			/*//     	display: flex !important;*/
+			/*// 		align-items: center !important;*/
+  	/*// 				justify-content: center !important;*/
+			/*//     }*/
+			/*// }*/
+
+			@keyframes example1 {
+			    /*// from {background-color: red;}*/
+			    to {
+			   			width: 30px;
+						height: 30px !important;
+						padding: 0 1px;
+				}
+			}
+			@keyframes example2 {
+			    /*// from {background-color: red;}*/
+			    to {
+			   			font-size: 20px;
+				}
+			}
 
 
 
