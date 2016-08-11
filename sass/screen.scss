@@ -124,13 +124,17 @@ body {
 		}
 
 		#twirl {
-			background-image: url('../images/whirl_tall.gif');
+			background-image: url('../images/whirl_tall_bright.gif');
 			background-size: cover;
+			/*background-color: #ccc;*/
 
 			/*****************************************************************************************************/
 			/*****************************************************************************************************/
 			/*****************************************************************************************************/
+			main {
+				
 			.grid {
+				height: 100%;
 				clear: both;
 				overflow: hidden;
 				position: relative;
@@ -257,63 +261,80 @@ body {
 
 				/*****************************************************************************************************/
 
-				&.round-end {
+				
+
+				
+
+
+			}
+			/*& is main*/
+			&.round-end {
+				padding: 15px;
+				h2, p {
+					text-align: center;
+					margin: 0;
+				}
+				p.result{
+					font-family: "Futura black", sans-serif;
+					font-size: 20px;
+					&.result-won{
+						color: green;
+					}
+				}
+				.grid {
+					
+					justify-content:center;
+
 					animation-name: tilesCentered;
-					animation-duration: 2s;
-					animation-timing-function: ease;
+					animation-duration: 1s;
+					animation-timing-function: ease-in-out;
 					animation-fill-mode: forwards;
 					
-
-					
-
 					&>div {
 
 						animation-name: tilesShrinkToReadable;
-						animation-duration: 2s;
-						animation-timing-function: ease;
+						animation-duration: 1s;
+						animation-timing-function: ease-in-out;
 						animation-fill-mode: forwards;
 
 						.pyramid {
 							animation-name: tilesHideToRevealLetter;
-							animation-delay: 2s;
-							animation-duration: 2s;
-							animation-timing-function: ease;
+							animation-delay: 1s;
+							animation-duration: 1s;
+							animation-timing-function: ease-in-out;
 							animation-fill-mode: forwards;
 						}
 						.picture {
 							animation-name: tilesHideToRevealLetter;
-							animation-delay: 2s;
-							animation-duration: 2s;
-							animation-timing-function: ease;
+							animation-delay: 1s;
+							animation-duration: 1s;
+							animation-timing-function: ease-in-out;
 							animation-fill-mode: forwards;
 						}
 						label {
 							animation-name: tilesTextShrinkToReadable;
-							animation-duration: 4s;
-							animation-timing-function: ease;
+							animation-duration: 1s;
+							animation-timing-function: ease-in-out;
 							animation-fill-mode: forwards;
 						}
 					}
-
 				}
-
 				@keyframes tilesCentered {
 					0% {
-
+						
 					}
 					50%{
 
 					}
 					100% {
-						/*justify-content: center;*/
-						/*-webkit-justify-content: center;*/
+						height: 40%;
+						justify-content: center;
+						-webkit-justify-content: center;
 					}
 				}
 				@keyframes tilesHideToRevealLetter {
 					0% {
 						/*opacity: 1;*/
-					}
-					99% {
 					}
 					100% {
 						opacity: 0;
@@ -331,7 +352,7 @@ body {
 						/*display: block !important;
 						opacity: 1;*/
 					}
-					50% {
+					77% {
 						font-size: 18px;
 						/*font-weight: bold;*/
 						/*display: block !important;
@@ -347,8 +368,7 @@ body {
 					}
 				}
 
-
-
+			}
 			}
 			/*****************************************************************************************************/
 			/*****************************************************************************************************/

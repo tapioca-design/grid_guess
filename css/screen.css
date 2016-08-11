@@ -84,147 +84,163 @@ body {
         body #wrapper header nav:nth-child(3) a img {
           padding: 10px 5px 0 0; }
     body #wrapper #twirl {
-      background-image: url("../images/whirl_tall.gif");
+      background-image: url("../images/whirl_tall_bright.gif");
       background-size: cover;
+      /*background-color: #ccc;*/
       /*****************************************************************************************************/
       /*****************************************************************************************************/
       /*****************************************************************************************************/
       /*****************************************************************************************************/
       /*****************************************************************************************************/
       /*****************************************************************************************************/ }
-      body #wrapper #twirl .grid {
-        clear: both;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        display: -webkit-flex;
-        flex-flow: row wrap;
-        align-content: stretch;
-        /*justify-content: center;*/
-        /*****************************************************************************************************/ }
-        body #wrapper #twirl .grid > div {
-          /*float: left;*/
-          position: relative; }
-          body #wrapper #twirl .grid > div > * {
-            position: absolute; }
-          body #wrapper #twirl .grid > div .pyramid {
-            /*display: none;*/
-            width: 100%;
-            height: 100%;
-            z-index: 999; }
-          body #wrapper #twirl .grid > div .picture {
-            /*display: none;*/
-            width: 100%;
-            height: 100%;
-            background-position: center center;
-            background-size: cover;
-            z-index: 888; }
-          body #wrapper #twirl .grid > div label {
-            /*border: 1px solid orange;*/
-            display: block;
-            /*display: none;*/
-            height: 100%;
-            font-size: 3.4rem;
-            text-align: center;
-            /*padding: 38% 0;*/
-            width: 100%;
-            z-index: 777; }
-            body #wrapper #twirl .grid > div label:before {
-              content: "";
+      body #wrapper #twirl main {
+        /*& is main*/ }
+        body #wrapper #twirl main .grid {
+          height: 100%;
+          clear: both;
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          display: -webkit-flex;
+          flex-flow: row wrap;
+          align-content: stretch;
+          /*justify-content: center;*/
+          /*****************************************************************************************************/ }
+          body #wrapper #twirl main .grid > div {
+            /*float: left;*/
+            position: relative; }
+            body #wrapper #twirl main .grid > div > * {
+              position: absolute; }
+            body #wrapper #twirl main .grid > div .pyramid {
+              /*display: none;*/
+              width: 100%;
+              height: 100%;
+              z-index: 999; }
+            body #wrapper #twirl main .grid > div .picture {
+              /*display: none;*/
+              width: 100%;
+              height: 100%;
+              background-position: center center;
+              background-size: cover;
+              z-index: 888; }
+            body #wrapper #twirl main .grid > div label {
+              /*border: 1px solid orange;*/
               display: block;
-              height: 10%; }
-        body #wrapper #twirl .grid > div:nth-child(1) .pyramid {
-          opacity: 1; }
-        body #wrapper #twirl .grid > div:nth-child(1) .picture {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(1) label {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(2) .pyramid {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(2) .picture {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(2) label {
-          opacity: 1; }
-        body #wrapper #twirl .grid > div:nth-child(3) .pyramid {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(3) .picture {
-          opacity: 1; }
-        body #wrapper #twirl .grid > div:nth-child(3) label {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(4) .pyramid {
-          opacity: 1; }
-        body #wrapper #twirl .grid > div:nth-child(4) .picture {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(4) label {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(5) .pyramid {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(5) .picture {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(5) label {
-          opacity: 1; }
-        body #wrapper #twirl .grid > div:nth-child(6) .pyramid {
-          opacity: 0; }
-        body #wrapper #twirl .grid > div:nth-child(6) .picture {
-          opacity: 1; }
-        body #wrapper #twirl .grid > div:nth-child(6) label {
-          opacity: 0; }
-        body #wrapper #twirl .grid.grid-4-tiles {
-          display: none; }
-          body #wrapper #twirl .grid.grid-4-tiles > div {
-            width: 50%;
-            height: 50%; }
-        body #wrapper #twirl .grid.grid-6-tiles {
-          /*display: none;*/ }
-          body #wrapper #twirl .grid.grid-6-tiles > div {
-            width: 33.333%;
-            height: 50%; }
-        body #wrapper #twirl .grid.grid-8-tiles {
-          display: none; }
-          body #wrapper #twirl .grid.grid-8-tiles > div {
-            width: 25%;
-            height: 50%; }
-        body #wrapper #twirl .grid.grid-9-tiles {
-          display: none; }
-          body #wrapper #twirl .grid.grid-9-tiles > div {
-            width: 33.333%;
-            height: 33.333%; }
-        body #wrapper #twirl .grid.grid-10-tiles {
-          display: none; }
-          body #wrapper #twirl .grid.grid-10-tiles > div {
-            width: 20%;
-            height: 50%; }
-        body #wrapper #twirl .grid.round-end {
-          animation-name: tilesCentered;
-          animation-duration: 2s;
-          animation-timing-function: ease;
-          animation-fill-mode: forwards; }
-          body #wrapper #twirl .grid.round-end > div {
-            animation-name: tilesShrinkToReadable;
-            animation-duration: 2s;
-            animation-timing-function: ease;
+              /*display: none;*/
+              height: 100%;
+              font-size: 3.4rem;
+              text-align: center;
+              /*padding: 38% 0;*/
+              width: 100%;
+              z-index: 777; }
+              body #wrapper #twirl main .grid > div label:before {
+                content: "";
+                display: block;
+                height: 10%; }
+          body #wrapper #twirl main .grid > div:nth-child(1) .pyramid {
+            opacity: 1; }
+          body #wrapper #twirl main .grid > div:nth-child(1) .picture {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(1) label {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(2) .pyramid {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(2) .picture {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(2) label {
+            opacity: 1; }
+          body #wrapper #twirl main .grid > div:nth-child(3) .pyramid {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(3) .picture {
+            opacity: 1; }
+          body #wrapper #twirl main .grid > div:nth-child(3) label {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(4) .pyramid {
+            opacity: 1; }
+          body #wrapper #twirl main .grid > div:nth-child(4) .picture {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(4) label {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(5) .pyramid {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(5) .picture {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(5) label {
+            opacity: 1; }
+          body #wrapper #twirl main .grid > div:nth-child(6) .pyramid {
+            opacity: 0; }
+          body #wrapper #twirl main .grid > div:nth-child(6) .picture {
+            opacity: 1; }
+          body #wrapper #twirl main .grid > div:nth-child(6) label {
+            opacity: 0; }
+          body #wrapper #twirl main .grid.grid-4-tiles {
+            display: none; }
+            body #wrapper #twirl main .grid.grid-4-tiles > div {
+              width: 50%;
+              height: 50%; }
+          body #wrapper #twirl main .grid.grid-6-tiles {
+            /*display: none;*/ }
+            body #wrapper #twirl main .grid.grid-6-tiles > div {
+              width: 33.333%;
+              height: 50%; }
+          body #wrapper #twirl main .grid.grid-8-tiles {
+            display: none; }
+            body #wrapper #twirl main .grid.grid-8-tiles > div {
+              width: 25%;
+              height: 50%; }
+          body #wrapper #twirl main .grid.grid-9-tiles {
+            display: none; }
+            body #wrapper #twirl main .grid.grid-9-tiles > div {
+              width: 33.333%;
+              height: 33.333%; }
+          body #wrapper #twirl main .grid.grid-10-tiles {
+            display: none; }
+            body #wrapper #twirl main .grid.grid-10-tiles > div {
+              width: 20%;
+              height: 50%; }
+        body #wrapper #twirl main.round-end {
+          padding: 15px; }
+          body #wrapper #twirl main.round-end h2, body #wrapper #twirl main.round-end p {
+            text-align: center;
+            margin: 0; }
+          body #wrapper #twirl main.round-end p.result {
+            font-family: "Futura black", sans-serif;
+            font-size: 20px; }
+            body #wrapper #twirl main.round-end p.result.result-won {
+              color: green; }
+          body #wrapper #twirl main.round-end .grid {
+            justify-content: center;
+            animation-name: tilesCentered;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
             animation-fill-mode: forwards; }
-            body #wrapper #twirl .grid.round-end > div .pyramid {
-              animation-name: tilesHideToRevealLetter;
-              animation-delay: 2s;
-              animation-duration: 2s;
-              animation-timing-function: ease;
+            body #wrapper #twirl main.round-end .grid > div {
+              animation-name: tilesShrinkToReadable;
+              animation-duration: 1s;
+              animation-timing-function: ease-in-out;
               animation-fill-mode: forwards; }
-            body #wrapper #twirl .grid.round-end > div .picture {
-              animation-name: tilesHideToRevealLetter;
-              animation-delay: 2s;
-              animation-duration: 2s;
-              animation-timing-function: ease;
-              animation-fill-mode: forwards; }
-            body #wrapper #twirl .grid.round-end > div label {
-              animation-name: tilesTextShrinkToReadable;
-              animation-duration: 4s;
-              animation-timing-function: ease;
-              animation-fill-mode: forwards; }
+              body #wrapper #twirl main.round-end .grid > div .pyramid {
+                animation-name: tilesHideToRevealLetter;
+                animation-delay: 1s;
+                animation-duration: 1s;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards; }
+              body #wrapper #twirl main.round-end .grid > div .picture {
+                animation-name: tilesHideToRevealLetter;
+                animation-delay: 1s;
+                animation-duration: 1s;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards; }
+              body #wrapper #twirl main.round-end .grid > div label {
+                animation-name: tilesTextShrinkToReadable;
+                animation-duration: 1s;
+                animation-timing-function: ease-in-out;
+                animation-fill-mode: forwards; }
 @keyframes tilesCentered {
   100% {
-    /*justify-content: center;*/
-    /*-webkit-justify-content: center;*/ } }
+    height: 40%;
+    justify-content: center;
+    -webkit-justify-content: center; } }
 @keyframes tilesHideToRevealLetter {
   0% {
     /*opacity: 1;*/ }
@@ -239,7 +255,7 @@ body {
   0% {
     /*display: block !important;
     opacity: 1;*/ }
-  50% {
+  77% {
     font-size: 18px;
     /*font-weight: bold;*/
     /*display: block !important;

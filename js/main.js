@@ -2,16 +2,18 @@ $( document ).ready(function() {
 
 	function setGridHeight () {
 		var wrapper = $("#wrapper");
-		var grid = $(".grid");
+		var main = $("#wrapper main");
+		var grid = $("#wrapper main .grid");
+		
 
 		var wrapperWidth = wrapper.width();
-		var gridHeight = wrapperWidth / 1.5;
+		var mainTagHeight = wrapperWidth / 1.5;
 
 		console.log("wrapperWidth",wrapperWidth);
-		console.log("gridHeight",gridHeight);
+		console.log("mainTagHeight",mainTagHeight);
 
-		grid.height(gridHeight);
-
+		main.height(mainTagHeight);
+		// grid.height(mainTagHeight);
 
 
 		var gridTilesLetterSize = wrapperWidth / 7.6;
