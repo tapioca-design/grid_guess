@@ -1,6 +1,3 @@
-
-
-
 @font-face {
 	font-family: 'Futura book';
 	src: url('../fonts/futura/futura-book.woff2') format('woff2'),
@@ -129,23 +126,34 @@ body {
 		#twirl {
 			background-image: url('../images/whirl_tall.gif');
 			background-size: cover;
+
+			/*****************************************************************************************************/
+			/*****************************************************************************************************/
+			/*****************************************************************************************************/
 			.grid {
 				clear: both;
 				overflow: hidden;
 				position: relative;
 
 				display: flex;
+				display: -webkit-flex;
 				flex-flow: row wrap;
 				align-content:stretch;
-
+				/*justify-content: center;*/
 				&>div {
 					/*float: left;*/
+					position: relative;
 
+					
+					& > * {
+						position: absolute;
+					}
 
 					.pyramid {
 						/*display: none;*/
 						width: 100%;
 						height: 100%;
+						z-index: 999;
 					}
 					.picture {
 						/*display: none;*/
@@ -153,6 +161,7 @@ body {
 						height: 100%;
 						background-position: center center;
 						background-size: cover;
+						z-index: 888;
 					}
 					label {
 						/*border: 1px solid orange;*/
@@ -163,7 +172,8 @@ body {
 						font-size: 3.4rem;
 						text-align: center;
 						/*padding: 38% 0;*/
-						/*width: 100%;*/
+						width: 100%;
+						z-index: 777;
 
 						&:before {
 							content:"";
@@ -172,8 +182,41 @@ body {
 						}
 					}
 					
-
+					
 				}
+
+				&>div:nth-child(1){
+					.pyramid {opacity:1;}
+					.picture {opacity:0;}
+					label {opacity:0;}
+				}
+				&>div:nth-child(2){
+					.pyramid {opacity:0;}
+					.picture {opacity:0;}
+					label {opacity:1;}
+				}
+				&>div:nth-child(3){
+					.pyramid {opacity:0;}
+					.picture {opacity:1;}
+					label {opacity:0;}
+				}
+				&>div:nth-child(4){
+					.pyramid {opacity:1;}
+					.picture {opacity:0;}
+					label {opacity:0;}
+				}
+				&>div:nth-child(5){
+					.pyramid {opacity:0;}
+					.picture {opacity:0;}
+					label {opacity:1;}
+				}
+				&>div:nth-child(6){
+					.pyramid {opacity:0;}
+					.picture {opacity:1;}
+					label {opacity:0;}
+				}
+
+
 				&.grid-4-tiles {
 					display: none;
 					& > div {
@@ -182,7 +225,7 @@ body {
 					}
 				}
 				&.grid-6-tiles {
-					display: none;
+					/*display: none;*/
 					& > div {
 						width: 33.333%;
 						height: 50%;
@@ -204,7 +247,7 @@ body {
 					}
 				}
 				&.grid-10-tiles {
-					/*display: none;*/
+					display: none;
 					& > div {
 						width: 20%;
 						height: 50%;
@@ -212,178 +255,204 @@ body {
 				}
 
 
-				/*state where letters form a word*/
-				/* #grid */
-				&.round-end {
-					/*display: flex;*/
-					/*align-items: center;*/
-					
+				/*****************************************************************************************************/
 
-					animation-name: example0;
+				&.round-end {
+					animation-name: tilesCentered;
 					animation-duration: 2s;
 					animation-timing-function: ease;
 					animation-fill-mode: forwards;
-					/*animation-delay: 2s;*/
-					/*animation-direction: reverse;*/
-					/*animation-direction: alternate;*/
+					
+
+					
 
 					&>div {
-						/*border:1px solid yellow;*/
-						
-							/*width: 30px;*/
-							/*height: 30px !important;*/
-							/*padding: 0 1px;*/
-							border: 1px solid yellow;
-							animation-name: example1;
-							animation-duration: 1s;
+
+						animation-name: tilesShrinkToReadable;
+						animation-duration: 2s;
+						animation-timing-function: ease;
+						animation-fill-mode: forwards;
+
+						.pyramid {
+							animation-name: tilesHideToRevealLetter;
+							animation-delay: 2s;
+							animation-duration: 2s;
 							animation-timing-function: ease;
 							animation-fill-mode: forwards;
-
-						
-						/*// border:1px solid orange;*/
-							label {
-								/*font-family: "Futura book";*/
-								/*// font-size: 20px;*/
-								animation-name: example2;
-								animation-duration: 1s;
-								animation-timing-function: ease;
-								animation-fill-mode: forwards;
-							}
-						
-
+						}
+						.picture {
+							animation-name: tilesHideToRevealLetter;
+							animation-delay: 2s;
+							animation-duration: 2s;
+							animation-timing-function: ease;
+							animation-fill-mode: forwards;
+						}
+						label {
+							animation-name: tilesTextShrinkToReadable;
+							animation-duration: 4s;
+							animation-timing-function: ease;
+							animation-fill-mode: forwards;
+						}
 					}
 
 				}
 
-							@keyframes example0 {
-								0%   {
-										/*top: 0px;*/
-								}
-							    50%  {
-							    		/*top: 200px;*/
-								}
-							    100%  {
-							    		justify-content: center;
-								}
-							}
-							@keyframes example1 {
-								to {
-									width: 25px;
-									height: 25px;
-									margin: 0 1px;
-								}
-							}
-							@keyframes example2 {
-								/*// from {background-color: red;}*/
-								to {
-									font-size: 18px;
-								}
-							}
+				@keyframes tilesCentered {
+					0% {
 
-
-
-						}
-
-
-						#keyboard {
-							clear: both;
-							& > div {
-								display: flex;
-								justify-content:space-around;
-								height: 44px;
-								.key {
-									display: flex;
-									width: 100%;
-									float: left;
-									text-align: center;
-
-									transition : opacity 500ms ease-out; 
-									  -webkit-transition : opacity 500ms ease-out; 
-									  -moz-transition : opacity 500ms ease-out;
-									  -o-transition : opacity 500ms ease-out;  
-
-
-									&:hover {
-										opacity: 0.5;
-									}
-									a {
-										display: block;
-										width: 100%;
-										font-size: 2rem;
-										color:black;
-										text-decoration: none;
-										background-color: #ccc;
-										border: 1px solid #ddd;
-										&:before{
-											content:"";
-											display: block;
-											padding-top:2px;
-										}
-									}
-									.empty {
-										display: none;
-									}
-								}
-							}
-						}
 					}
+					50%{
 
-					footer {
-						overflow: auto;
-						clear: both;
-						color: #666;
-						padding: 10px 0;
+					}
+					100% {
+						/*justify-content: center;*/
+						/*-webkit-justify-content: center;*/
+					}
+				}
+				@keyframes tilesHideToRevealLetter {
+					0% {
+						/*opacity: 1;*/
+					}
+					99% {
+					}
+					100% {
+						opacity: 0;
+					}
+				}
+				@keyframes tilesShrinkToReadable {
+					to {
+						width: 25px;
+						height: 25px;
+						margin: 0 1px;
+					}
+				}
+				@keyframes tilesTextShrinkToReadable {
+					0% {
+						/*display: block !important;
+						opacity: 1;*/
+					}
+					50% {
+						font-size: 18px;
+						/*font-weight: bold;*/
+						/*display: block !important;
+						opacity: 1;*/
+						/*opacity: 0;*/
+						opacity: inital;
+					}
+					100% {
+						font-size: 18px;
+						/*font-weight: bold;*/
+						/*display: block !important;*/
+						opacity: 1;
+					}
+				}
+
+
+
+			}
+			/*****************************************************************************************************/
+			/*****************************************************************************************************/
+			/*****************************************************************************************************/
+
+			#keyboard {
+				clear: both;
+				& > div {
+					display: flex;
+					justify-content:space-around;
+					height: 44px;
+					.key {
+						display: flex;
+						width: 100%;
+						float: left;
 						text-align: center;
-						/*background-color: black;*/
-						/*height: inherit;*/
-						h2 {
-							font-size: 1rem;
-							margin: 0;
+
+						transition : opacity 500ms ease-out; 
+						-webkit-transition : opacity 500ms ease-out; 
+						-moz-transition : opacity 500ms ease-out;
+						-o-transition : opacity 500ms ease-out;  
+
+
+						&:hover {
+							opacity: 0.5;
 						}
-						#level {
-							text-align: center;
-							& > div {
-								border: 1px solid pink;
-								width: 10%;
-								font-size: 1.2rem;
-								font-family: "Futura black", sans-serif;
+						a {
+							display: block;
+							width: 100%;
+							font-size: 2rem;
+							color:black;
+							text-decoration: none;
+							background-color: #ccc;
+							border: 1px solid #ddd;
+							&:before{
+								content:"";
+								display: block;
+								padding-top:2px;
 							}
-							#level-from {
-								float: left;
-
-							}
-							#level-to {
-								float: right;
-							}
-							ul {
-								border: 1px solid yellow;
-								list-style: none;
-								margin: 10px 0 0 0;
-								padding: 0;
-								width: 80%;
-								display: flex;
-								justify-content:center;
-								li {
-									width: 4.4px;
-									height: 4.4px;
-									margin: 1px;
-									padding: 0;
-									display: flex;							
-									&.filled {
-										background-color: #333;
-										border: 1px solid #333;
-									}
-									&.current {
-										background-color: #ccc;
-										border: 1px solid #ccc;
-									}
-									&.empty {
-										border: 1px solid #666;
-									}
-								}
-							}
-
+						}
+						.empty {
+							display: none;
 						}
 					}
 				}
 			}
+		}
+
+		footer {
+			overflow: auto;
+			clear: both;
+			color: #666;
+			padding: 10px 0;
+			text-align: center;
+			/*background-color: black;*/
+			/*height: inherit;*/
+			h2 {
+				font-size: 1rem;
+				margin: 0;
+			}
+			#level {
+				text-align: center;
+				& > div {
+					border: 1px solid pink;
+					width: 10%;
+					font-size: 1.2rem;
+					font-family: "Futura black", sans-serif;
+				}
+				#level-from {
+					float: left;
+
+				}
+				#level-to {
+					float: right;
+				}
+				ul {
+					border: 1px solid yellow;
+					list-style: none;
+					margin: 10px 0 0 0;
+					padding: 0;
+					width: 80%;
+					display: flex;
+					justify-content:center;
+					li {
+						width: 4.4px;
+						height: 4.4px;
+						margin: 1px;
+						padding: 0;
+						display: flex;							
+						&.filled {
+							background-color: #333;
+							border: 1px solid #333;
+						}
+						&.current {
+							background-color: #ccc;
+							border: 1px solid #ccc;
+						}
+						&.empty {
+							border: 1px solid #666;
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
