@@ -199,7 +199,13 @@ body {
             display: flex;
             width: 100%;
             float: left;
-            text-align: center; }
+            text-align: center;
+            transition: opacity 500ms ease-out;
+            -webkit-transition: opacity 500ms ease-out;
+            -moz-transition: opacity 500ms ease-out;
+            -o-transition: opacity 500ms ease-out; }
+            body #wrapper #twirl #keyboard > div .key:hover {
+              opacity: 0.5; }
             body #wrapper #twirl #keyboard > div .key a {
               display: block;
               width: 100%;

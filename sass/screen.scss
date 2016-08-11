@@ -296,6 +296,16 @@ body {
 									width: 100%;
 									float: left;
 									text-align: center;
+
+									transition : opacity 500ms ease-out; 
+									  -webkit-transition : opacity 500ms ease-out; 
+									  -moz-transition : opacity 500ms ease-out;
+									  -o-transition : opacity 500ms ease-out;  
+
+
+									&:hover {
+										opacity: 0.5;
+									}
 									a {
 										display: block;
 										width: 100%;
