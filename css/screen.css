@@ -34,12 +34,11 @@ body {
     max-width: 80vh;
     height: 100%;
     margin: 0 auto;
-    background-color: brown;
-    /*background-image: url('../images/whirl_tall.gif');*/
-    background-size: cover; }
+    background-color: black; }
     body #wrapper #menu {
       display: none;
       position: absolute;
+      z-index: 999;
       width: 100%;
       height: 100%;
       background-color: black;
@@ -84,138 +83,145 @@ body {
         text-align: right; }
         body #wrapper header nav:nth-child(3) a img {
           padding: 10px 5px 0 0; }
-    body #wrapper .grid {
-      clear: both;
-      overflow: auto;
-      position: relative;
-      /*state where letters form a word*/
-      /* #grid */
-      /*// @keyframes example {*/
-      /*//     from {*/
-      /*//     	display: flex !important;*/
-      /*// 		align-items: center !important;*/
-      /*// 				justify-content: center !important;*/
-      /*//     }*/
-      /*//     to {*/
-      /*//     	display: flex !important;*/
-      /*// 		align-items: center !important;*/
-      /*// 				justify-content: center !important;*/
-      /*//     }*/
-      /*// }*/ }
-      body #wrapper .grid > div {
-        float: left; }
-        body #wrapper .grid > div .tile {
-          display: flex;
-          /*border:1px solid red;*/ }
-          body #wrapper .grid > div .tile .pyramid {
-            display: none;
-            width: 100%; }
-          body #wrapper .grid > div .tile .picture {
-            display: none;
+    body #wrapper #twirl {
+      background-image: url("../images/whirl_tall.gif");
+      background-size: cover; }
+      body #wrapper #twirl .grid {
+        clear: both;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: stretch;
+        /*state where letters form a word*/
+        /* #grid */ }
+        body #wrapper #twirl .grid > div {
+          /*float: left;*/ }
+          body #wrapper #twirl .grid > div .pyramid {
+            /*display: none;*/
             width: 100%;
+            height: 100%; }
+          body #wrapper #twirl .grid > div .picture {
+            /*display: none;*/
+            width: 100%;
+            height: 100%;
             background-position: center center;
             background-size: cover; }
-          body #wrapper .grid > div .tile label {
+          body #wrapper #twirl .grid > div label {
+            /*border: 1px solid orange;*/
+            display: block;
             /*display: none;*/
+            height: 100%;
             font-size: 3.4rem;
             text-align: center;
-            width: 100%; }
-            body #wrapper .grid > div .tile label:before {
+            /*padding: 38% 0;*/
+            /*width: 100%;*/ }
+            body #wrapper #twirl .grid > div label:before {
               content: "";
               display: block;
               height: 10%; }
-      body #wrapper .grid.grid-4-tiles {
-        display: none; }
-        body #wrapper .grid.grid-4-tiles > div {
-          width: 50%; }
-      body #wrapper .grid.grid-6-tiles {
-        display: none; }
-        body #wrapper .grid.grid-6-tiles > div {
-          width: 50%; }
-      body #wrapper .grid.grid-8-tiles {
-        display: none; }
-        body #wrapper .grid.grid-8-tiles > div {
-          width: 25%; }
-      body #wrapper .grid.grid-9-tiles {
-        display: none; }
-        body #wrapper .grid.grid-9-tiles > div {
-          width: 33.333%; }
-      body #wrapper .grid.grid-10-tiles {
-        /*display: none;*/ }
-        body #wrapper .grid.grid-10-tiles > div {
-          width: 20%; }
-      body #wrapper .grid.round-end {
-        display: flex;
-        /*align-items: center;*/
-        /*justify-content: center;*/
-        animation-name: example;
-        animation-duration: 2s;
-        animation-timing-function: ease;
-        animation-fill-mode: forwards;
-        /*animation-delay: 2s;*/
-        /*animation-direction: reverse;*/
-        /*animation-direction: alternate;*/ }
-        body #wrapper .grid.round-end > div {
-          /*border:1px solid yellow;*/ }
-          body #wrapper .grid.round-end > div, body #wrapper .grid.round-end > div .tile, body #wrapper .grid.round-end > div .tile > * {
+        body #wrapper #twirl .grid.grid-4-tiles {
+          display: none; }
+          body #wrapper #twirl .grid.grid-4-tiles > div {
+            width: 50%;
+            height: 50%; }
+        body #wrapper #twirl .grid.grid-6-tiles {
+          display: none; }
+          body #wrapper #twirl .grid.grid-6-tiles > div {
+            width: 33.333%;
+            height: 50%; }
+        body #wrapper #twirl .grid.grid-8-tiles {
+          display: none; }
+          body #wrapper #twirl .grid.grid-8-tiles > div {
+            width: 25%;
+            height: 50%; }
+        body #wrapper #twirl .grid.grid-9-tiles {
+          display: none; }
+          body #wrapper #twirl .grid.grid-9-tiles > div {
+            width: 33.333%;
+            height: 33.333%; }
+        body #wrapper #twirl .grid.grid-10-tiles {
+          /*display: none;*/ }
+          body #wrapper #twirl .grid.grid-10-tiles > div {
+            width: 20%;
+            height: 50%; }
+        body #wrapper #twirl .grid.round-end {
+          /*display: flex;*/
+          /*align-items: center;*/
+          animation-name: example0;
+          animation-duration: 2s;
+          animation-timing-function: ease;
+          animation-fill-mode: forwards;
+          /*animation-delay: 2s;*/
+          /*animation-direction: reverse;*/
+          /*animation-direction: alternate;*/ }
+          body #wrapper #twirl .grid.round-end > div {
+            /*border:1px solid yellow;*/
             /*width: 30px;*/
             /*height: 30px !important;*/
             /*padding: 0 1px;*/
+            border: 1px solid yellow;
             animation-name: example1;
-            animation-duration: 2s;
+            animation-duration: 1s;
             animation-timing-function: ease;
-            animation-fill-mode: forwards; }
-          body #wrapper .grid.round-end > div .tile {
+            animation-fill-mode: forwards;
             /*// border:1px solid orange;*/ }
-            body #wrapper .grid.round-end > div .tile label {
-              font-family: "Futura book";
+            body #wrapper #twirl .grid.round-end > div label {
+              /*font-family: "Futura book";*/
               /*// font-size: 20px;*/
               animation-name: example2;
-              animation-duration: 2s;
+              animation-duration: 1s;
               animation-timing-function: ease;
               animation-fill-mode: forwards; }
+@keyframes example0 {
+  0% {
+    /*top: 0px;*/ }
+  50% {
+    /*top: 200px;*/ }
+  100% {
+    justify-content: center; } }
 @keyframes example1 {
-  /*// from {background-color: red;}*/
   to {
-    width: 30px;
-    height: 30px !important;
-    padding: 0 1px; } }
+    width: 25px;
+    height: 25px;
+    margin: 0 1px; } }
 @keyframes example2 {
   /*// from {background-color: red;}*/
   to {
-    font-size: 20px; } }
-    body #wrapper #keyboard {
-      clear: both; }
-      body #wrapper #keyboard > div {
-        display: flex;
-        justify-content: space-around;
-        height: 44px; }
-        body #wrapper #keyboard > div .key {
+    font-size: 18px; } }
+      body #wrapper #twirl #keyboard {
+        clear: both; }
+        body #wrapper #twirl #keyboard > div {
           display: flex;
-          width: 100%;
-          float: left;
-          text-align: center; }
-          body #wrapper #keyboard > div .key a {
-            display: block;
+          justify-content: space-around;
+          height: 44px; }
+          body #wrapper #twirl #keyboard > div .key {
+            display: flex;
             width: 100%;
-            font-size: 2rem;
-            color: black;
-            text-decoration: none;
-            background-color: #ccc;
-            border: 1px solid #ddd; }
-            body #wrapper #keyboard > div .key a:before {
-              content: "";
+            float: left;
+            text-align: center; }
+            body #wrapper #twirl #keyboard > div .key a {
               display: block;
-              padding-top: 2px; }
-          body #wrapper #keyboard > div .key .empty {
-            display: none; }
+              width: 100%;
+              font-size: 2rem;
+              color: black;
+              text-decoration: none;
+              background-color: #ccc;
+              border: 1px solid #ddd; }
+              body #wrapper #twirl #keyboard > div .key a:before {
+                content: "";
+                display: block;
+                padding-top: 2px; }
+            body #wrapper #twirl #keyboard > div .key .empty {
+              display: none; }
     body #wrapper footer {
+      overflow: auto;
       clear: both;
       color: #666;
       padding: 10px 0;
       text-align: center;
-      background-color: black;
-      height: inherit; }
+      /*background-color: black;*/
+      /*height: inherit;*/ }
       body #wrapper footer h2 {
         font-size: 1rem;
         margin: 0; }

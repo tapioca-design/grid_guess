@@ -53,12 +53,12 @@ body {
 		max-width: 80vh;
 		height: 100%;
 		margin: 0 auto;
-		background-color: brown;
-		/*background-image: url('../images/whirl_tall.gif');*/
-		background-size: cover;
+		background-color: black;
+		
 		#menu {
 			display: none;
 			position: absolute;
+			z-index: 999;
 			width: 100%;
 			height: 100%;
 			background-color: black;
@@ -126,238 +126,254 @@ body {
 			}
 		}
 
-		.grid {
-			clear: both;
-			overflow: auto;
-			position: relative;
-			.picture {		
-			}
-			&>div {
-				float: left;
-				.tile {
-					display: flex;
-					/*border:1px solid red;*/
+		#twirl {
+			background-image: url('../images/whirl_tall.gif');
+			background-size: cover;
+			.grid {
+				clear: both;
+				overflow: hidden;
+				position: relative;
+
+				display: flex;
+				flex-flow: row wrap;
+				align-content:stretch;
+
+				&>div {
+					/*float: left;*/
+
+
 					.pyramid {
-						display: none;
+						/*display: none;*/
 						width: 100%;
+						height: 100%;
 					}
 					.picture {
-						display: none;
+						/*display: none;*/
 						width: 100%;
+						height: 100%;
 						background-position: center center;
 						background-size: cover;
 					}
 					label {
+						/*border: 1px solid orange;*/
+						display: block;
 						/*display: none;*/
+						height: 100%;
+						
 						font-size: 3.4rem;
 						text-align: center;
-						width: 100%;
+						/*padding: 38% 0;*/
+						/*width: 100%;*/
+
 						&:before {
 							content:"";
 							display: block;
 							height: 10%;
 						}
-
 					}
 					
-				}
-			}
-			&.grid-4-tiles {
-				display: none;
-				& > div {
-					width:50%;
-				}
-			}
-			&.grid-6-tiles {
-				display: none;
-				& > div {
-					width:50%;
-				}
-			}
-			&.grid-8-tiles {
-				display: none;
-				& > div {
-					width:25%;
 
 				}
-			}
-			&.grid-9-tiles {
-				display: none;
-				& > div {
-					width:33.333%;
+				&.grid-4-tiles {
+					display: none;
+					& > div {
+						width: 50%;
+						height: 50%;
+					}
 				}
-			}
-			&.grid-10-tiles {
-				/*display: none;*/
-				& > div {
-					width:20%;
+				&.grid-6-tiles {
+					display: none;
+					& > div {
+						width: 33.333%;
+						height: 50%;
+					}
 				}
-			}
-
-
-			/*state where letters form a word*/
-			/* #grid */
-			&.round-end {
-				display: flex;
-				 /*align-items: center;*/
-  				 /*justify-content: center;*/
-
-  				animation-name: example;
-   				animation-duration: 2s;
-   				animation-timing-function: ease;
-   				animation-fill-mode: forwards;
-   				/*animation-delay: 2s;*/
-   				/*animation-direction: reverse;*/
-   				/*animation-direction: alternate;*/
-
-				&>div {
-					/*border:1px solid yellow;*/
-					&, & .tile, & .tile > * {
-						/*width: 30px;*/
-						/*height: 30px !important;*/
-						/*padding: 0 1px;*/
-						animation-name: example1;
-   						animation-duration: 2s;
-   						animation-timing-function: ease;
-   						animation-fill-mode: forwards;
+				&.grid-8-tiles {
+					display: none;
+					& > div {
+						width: 25%;
+						height: 50%;
 
 					}
-					.tile {
+				}
+				&.grid-9-tiles {
+					display: none;
+					& > div {
+						width: 33.333%;
+						height: 33.333%;
+					}
+				}
+				&.grid-10-tiles {
+					/*display: none;*/
+					& > div {
+						width: 20%;
+						height: 50%;
+					}
+				}
+
+
+				/*state where letters form a word*/
+				/* #grid */
+				&.round-end {
+					/*display: flex;*/
+					/*align-items: center;*/
+					
+
+					animation-name: example0;
+					animation-duration: 2s;
+					animation-timing-function: ease;
+					animation-fill-mode: forwards;
+					/*animation-delay: 2s;*/
+					/*animation-direction: reverse;*/
+					/*animation-direction: alternate;*/
+
+					&>div {
+						/*border:1px solid yellow;*/
+						
+							/*width: 30px;*/
+							/*height: 30px !important;*/
+							/*padding: 0 1px;*/
+							border: 1px solid yellow;
+							animation-name: example1;
+							animation-duration: 1s;
+							animation-timing-function: ease;
+							animation-fill-mode: forwards;
+
+						
 						/*// border:1px solid orange;*/
-						label {
-							font-family: "Futura book";
-							/*// font-size: 20px;*/
-							animation-name: example2;
-   							animation-duration: 2s;
-   							animation-timing-function: ease;
-   							animation-fill-mode: forwards;
-						}
+							label {
+								/*font-family: "Futura book";*/
+								/*// font-size: 20px;*/
+								animation-name: example2;
+								animation-duration: 1s;
+								animation-timing-function: ease;
+								animation-fill-mode: forwards;
+							}
+						
+
 					}
 
 				}
 
-			}
-			/*// @keyframes example {*/
-			/*//     from {*/
-			/*//     	display: flex !important;*/
-			/*// 		align-items: center !important;*/
-  	/*// 				justify-content: center !important;*/
-			/*//     }*/
-			/*//     to {*/
-			/*//     	display: flex !important;*/
-			/*// 		align-items: center !important;*/
-  	/*// 				justify-content: center !important;*/
-			/*//     }*/
-			/*// }*/
-
-			@keyframes example1 {
-			    /*// from {background-color: red;}*/
-			    to {
-			   			width: 30px;
-						height: 30px !important;
-						padding: 0 1px;
-				}
-			}
-			@keyframes example2 {
-			    /*// from {background-color: red;}*/
-			    to {
-			   			font-size: 20px;
-				}
-			}
+							@keyframes example0 {
+								0%   {
+										/*top: 0px;*/
+								}
+							    50%  {
+							    		/*top: 200px;*/
+								}
+							    100%  {
+							    		justify-content: center;
+								}
+							}
+							@keyframes example1 {
+								to {
+									width: 25px;
+									height: 25px;
+									margin: 0 1px;
+								}
+							}
+							@keyframes example2 {
+								/*// from {background-color: red;}*/
+								to {
+									font-size: 18px;
+								}
+							}
 
 
 
-		}
+						}
 
 
-		#keyboard {
-			clear: both;
-			& > div {
-				display: flex;
-				justify-content:space-around;
-				height: 44px;
-				.key {
-					display: flex;
-					width: 100%;
-					float: left;
-					text-align: center;
-					a {
-						display: block;
-						width: 100%;
-						font-size: 2rem;
-						color:black;
-						text-decoration: none;
-						background-color: #ccc;
-						border: 1px solid #ddd;
-						&:before{
-							content:"";
-							display: block;
-							padding-top:2px;
+						#keyboard {
+							clear: both;
+							& > div {
+								display: flex;
+								justify-content:space-around;
+								height: 44px;
+								.key {
+									display: flex;
+									width: 100%;
+									float: left;
+									text-align: center;
+									a {
+										display: block;
+										width: 100%;
+										font-size: 2rem;
+										color:black;
+										text-decoration: none;
+										background-color: #ccc;
+										border: 1px solid #ddd;
+										&:before{
+											content:"";
+											display: block;
+											padding-top:2px;
+										}
+									}
+									.empty {
+										display: none;
+									}
+								}
+							}
 						}
 					}
-					.empty {
-						display: none;
-					}
-				}
-			}
-		}
 
-
-		footer {
-			clear: both;
-			color: #666;
-			padding: 10px 0;
-			text-align: center;
-			background-color: black;
-			height: inherit;
-			h2 {
-				font-size: 1rem;
-				margin: 0;
-			}
-			#level {
-				text-align: center;
-				& > div {
-					border: 1px solid pink;
-					width: 10%;
-					font-size: 1.2rem;
-					font-family: "Futura black", sans-serif;
-				}
-				#level-from {
-					float: left;
-
-				}
-				#level-to {
-					float: right;
-				}
-				ul {
-					border: 1px solid yellow;
-					list-style: none;
-					margin: 10px 0 0 0;
-					padding: 0;
-					width: 80%;
-					display: flex;
-					justify-content:center;
-					li {
-						width: 4.4px;
-						height: 4.4px;
-						margin: 1px;
-						padding: 0;
-						display: flex;							
-						&.filled {
-							background-color: #333;
-							border: 1px solid #333;
+					footer {
+						overflow: auto;
+						clear: both;
+						color: #666;
+						padding: 10px 0;
+						text-align: center;
+						/*background-color: black;*/
+						/*height: inherit;*/
+						h2 {
+							font-size: 1rem;
+							margin: 0;
 						}
-						&.current {
-							background-color: #ccc;
-							border: 1px solid #ccc;
-						}
-						&.empty {
-							border: 1px solid #666;
+						#level {
+							text-align: center;
+							& > div {
+								border: 1px solid pink;
+								width: 10%;
+								font-size: 1.2rem;
+								font-family: "Futura black", sans-serif;
+							}
+							#level-from {
+								float: left;
+
+							}
+							#level-to {
+								float: right;
+							}
+							ul {
+								border: 1px solid yellow;
+								list-style: none;
+								margin: 10px 0 0 0;
+								padding: 0;
+								width: 80%;
+								display: flex;
+								justify-content:center;
+								li {
+									width: 4.4px;
+									height: 4.4px;
+									margin: 1px;
+									padding: 0;
+									display: flex;							
+									&.filled {
+										background-color: #333;
+										border: 1px solid #333;
+									}
+									&.current {
+										background-color: #ccc;
+										border: 1px solid #ccc;
+									}
+									&.empty {
+										border: 1px solid #666;
+									}
+								}
+							}
+
 						}
 					}
 				}
-				
 			}
-		}
-	}
-}
