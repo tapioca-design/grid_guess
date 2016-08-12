@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 
 	function setGridHeight () {
+		var body = $("body");
 		var wrapper = $("#wrapper");
 		var main = $("#wrapper main");
 		var grid = $("#wrapper main .grid");
@@ -27,7 +28,7 @@ $( document ).ready(function() {
 		$("main h2, main p").hide();
 		function roundEnd () {
 			$("main h2, main p").show();
-			main.addClass("round-end");
+			body.addClass("round-end");
 		}
 		setTimeout(roundEnd, 2000);
 		/*****************************/
