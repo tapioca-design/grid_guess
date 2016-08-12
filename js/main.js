@@ -20,6 +20,19 @@ $( document ).ready(function() {
 		var gridTilesLetter = $(".grid > div label");
 		gridTilesLetter.css("font-size", gridTilesLetterSize+"px");
 
+
+
+
+		/************ round end *****************/
+		$("main h2, main p").hide();
+		function roundEnd () {
+			$("main h2, main p").show();
+			main.addClass("round-end");
+		}
+		setTimeout(roundEnd, 2000);
+		/*****************************/
+
+
 	}
 	setGridHeight();
 
