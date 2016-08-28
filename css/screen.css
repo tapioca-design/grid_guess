@@ -36,6 +36,38 @@ body {
     height: 100%;
     margin: 0 auto;
     background-color: black; }
+    body #wrapper .tooltip {
+      position: absolute;
+      z-index: 9999;
+      background-color: white;
+      box-shadow: 0 0 100px #000;
+      padding: 10px;
+      border-radius: 10px; }
+      body #wrapper .tooltip.tooltip-appendix-top:before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        background-color: white;
+        transform: rotate(45deg);
+        width: 20px;
+        height: 20px;
+        margin: auto 50%;
+        left: -10px;
+        top: -10px; }
+      body #wrapper .tooltip.tooltip-appendix-bottom:after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        background-color: white;
+        transform: rotate(45deg);
+        width: 20px;
+        height: 20px;
+        margin: auto 50%;
+        left: -10px; }
+      body #wrapper .tooltip#tooltip-keyboard-instructions {
+        top: 50px; }
     body #wrapper #menu {
       display: none;
       position: absolute;
@@ -265,22 +297,25 @@ body {
         font-size: 1rem;
         margin: 0; }
       body #wrapper footer #level {
-        text-align: center; }
+        /*text-align: center;*/
+        display: flex;
+        justify-content: space-around;
+        align-items: center; }
         body #wrapper footer #level > div {
-          border: 1px solid pink;
-          width: 10%;
+          /*border: 1px solid pink;*/
+          /*width: 10%;*/
           font-size: 1.2rem;
           font-family: "Futura black", sans-serif; }
         body #wrapper footer #level #level-from {
-          float: left; }
+          /*float: left;*/ }
         body #wrapper footer #level #level-to {
-          float: right; }
+          /*float: right;*/ }
         body #wrapper footer #level ul {
-          border: 1px solid yellow;
+          /*border: 1px solid yellow;*/
           list-style: none;
-          margin: 10px 0 0 0;
+          margin: 0;
           padding: 0;
-          width: 80%;
+          /*width: 80%;*/
           display: flex;
           justify-content: center; }
           body #wrapper footer #level ul li {
