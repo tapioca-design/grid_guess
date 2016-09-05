@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Futura book';
-  src: url("../fonts/futura/futura-book.woff2") format("woff2"), url("../fonts/futura/futura-book.eot?#iefix") format("embedded-opentype"), url("../fonts/futura/futura-book.woff") format("woff"), url("../fonts/futura/futura-book.ttf") format("truetype"), url("../fonts/futura/futura-book.svg#FuturaBT-Book") format("svg");
+  src: url("../fonts/futura/futura-book.eot?#iefix") format("embedded-opentype"), url("../fonts/futura/futura-book.ttf") format("truetype"), url("../fonts/futura/futura-book.svg#FuturaBT-Book") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: 'Futura black';
-  src: url("../fonts/futura/Futura Extra Black font.woff2") format("woff2"), url("../fonts/futura/Futura Extra Black font.eot?#iefix") format("embedded-opentype"), url("../fonts/futura/Futura Extra Black font.woff") format("woff"), url("../fonts/futura/Futura Extra Black font.ttf") format("truetype"), url("../fonts/futura/Futura Extra Black font.svg#FuturaBT-Book") format("svg");
+  src: url("../fonts/futura/Futura Extra Black font.eot?#iefix") format("embedded-opentype"), url("../fonts/futura/Futura Extra Black font.ttf") format("truetype"), url("../fonts/futura/Futura Extra Black font.svg#FuturaBT-Book") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
@@ -67,15 +67,22 @@ body {
         margin: auto 50%;
         left: -10px; }
       body #wrapper .tooltip#tooltip-keyboard-instructions {
-        top: 50px; }
+        top: 40px;
+        left: 40px; }
     body #wrapper #menu {
-      display: none;
+      /*display: none;*/
       position: absolute;
-      z-index: 999;
+      z-index: 9999;
       width: 100%;
       height: 100%;
       background-color: black;
       color: white; }
+      body #wrapper #menu.close {
+        display: none;
+        /*transition: opacity 1s ease;*/ }
+      body #wrapper #menu.open {
+        display: block;
+        /*transition: opacity 1s ease;*/ }
       body #wrapper #menu header nav {
         width: 10%;
         float: right;
@@ -252,15 +259,16 @@ body {
               width: 20%;
               height: 50%; }
       body #wrapper #twirl #keyboard {
+        position: relative;
         opacity: 1;
         visibility: visible;
         transition: visibility 1s linear, opacity 1s linear;
         clear: both; }
-        body #wrapper #twirl #keyboard > div {
+        body #wrapper #twirl #keyboard .row {
           display: flex;
           justify-content: space-around;
           height: 44px; }
-          body #wrapper #twirl #keyboard > div .key {
+          body #wrapper #twirl #keyboard .row .key {
             display: flex;
             width: 100%;
             float: left;
@@ -269,9 +277,9 @@ body {
             -webkit-transition: opacity 500ms ease-out;
             -moz-transition: opacity 500ms ease-out;
             -o-transition: opacity 500ms ease-out; }
-            body #wrapper #twirl #keyboard > div .key:hover {
+            body #wrapper #twirl #keyboard .row .key:hover {
               opacity: 0.5; }
-            body #wrapper #twirl #keyboard > div .key a {
+            body #wrapper #twirl #keyboard .row .key a {
               display: block;
               width: 100%;
               font-size: 2rem;
@@ -279,11 +287,11 @@ body {
               text-decoration: none;
               background-color: #ccc;
               border: 1px solid #ddd; }
-              body #wrapper #twirl #keyboard > div .key a:before {
+              body #wrapper #twirl #keyboard .row .key a:before {
                 content: "";
                 display: block;
                 padding-top: 2px; }
-            body #wrapper #twirl #keyboard > div .key .empty {
+            body #wrapper #twirl #keyboard .row .key .empty {
               display: none; }
     body #wrapper footer {
       overflow: auto;
