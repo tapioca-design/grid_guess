@@ -41,6 +41,32 @@ body {
 		font-family: "Futura black", sans-serif;
 	}
 
+	.btn {
+		display: inline-block;
+		padding: 5px;
+		text-align: center;
+		margin: 0 75px;
+		text-decoration: none;
+		font-size: 1.2rem;
+		&:hover {
+			opacity:0.8;
+		}
+	}
+	.btn-dark {
+		color:white;
+		background-color: #666;
+	}
+	.btn-arrow-right:after {
+		content: "";
+		display: block;
+		float: right;
+		width: 25px;
+		height: 25px;
+		background-image: url("../svg/arrow-right.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
 	#wrapper {
 		position: relative;
 		max-width: 80vh;
@@ -131,7 +157,7 @@ body {
 				text-align: center;
 				font-weight: normal;
 				font-size: 1rem;
-				color:white;
+				color:#999;
 				margin: 0;
 				padding-top: 15px;
 			}
@@ -177,7 +203,7 @@ body {
 					/*align-content: center;*/
 					position: relative;
 					flex-direction: column;
-					justify-content: center;
+					/*justify-content: center;*/
 					height: 100%;
 					clear: both;
 					overflow: hidden;
@@ -196,7 +222,7 @@ body {
 						/*transition-delay: 0;*/
 					}
 					h2 {
-						top:30px;
+						top:2px;
 					}
 
 					p.result{
@@ -301,59 +327,78 @@ body {
 							& .tile {width: 20%;height: 50%;}
 						}
 					}
+					#wikipedia {
+						display: none;
+						opacity: 0;
+						background-color: white;
+						color: #666;
+						border:1px solid #ccc;
+						border-radius: 5px;
+						padding: 5px;
+						margin: 5px;
+						font-size: 0.8rem;
+						overflow-y: scroll;
+						height: 150px;
+					}
+					#btn-next-round {
+						display: none;
+						opacity: 0;
+					}
 					/*****************************************************************************************************/
+					#keyboard {
+						position: relative;
+						opacity: 1; 
+						visibility: visible; 
+						transition: visibility 0.3s linear, opacity 0.3s linear; 
+						clear: both;
+						.row {
+							display: flex;
+							justify-content:space-around;
+							height: 44px;
+							.key {
+								display: flex;
+								width: 100%;
+								float: left;
+								text-align: center;
+
+								transition : opacity 500ms ease-out; 
+								-webkit-transition : opacity 500ms ease-out; 
+								-moz-transition : opacity 500ms ease-out;
+								-o-transition : opacity 500ms ease-out;  
+
+
+								&:hover {
+									opacity: 0.5;
+								}
+								a {
+									display: block;
+									width: 100%;
+									font-size: 2rem;
+									color:black;
+									text-decoration: none;
+									background-color: #ccc;
+									border: 1px solid #ddd;
+									&:before{
+										content:"";
+										display: block;
+										padding-top:2px;
+									}
+								}
+								.empty {
+									display: none;
+								}
+							}
+						}
+					}
 				}
+				
 				
 			}
 			/*****************************************************************************************************/
 			/*****************************************************************************************************/
 			/*****************************************************************************************************/
 
-			#keyboard {
-				position: relative;
-				opacity: 1; 
-				visibility: visible; 
-				transition: visibility 1s linear, opacity 1s linear; 
-				clear: both;
-				.row {
-					display: flex;
-					justify-content:space-around;
-					height: 44px;
-					.key {
-						display: flex;
-						width: 100%;
-						float: left;
-						text-align: center;
-
-						transition : opacity 500ms ease-out; 
-						-webkit-transition : opacity 500ms ease-out; 
-						-moz-transition : opacity 500ms ease-out;
-						-o-transition : opacity 500ms ease-out;  
-
-
-						&:hover {
-							opacity: 0.5;
-						}
-						a {
-							display: block;
-							width: 100%;
-							font-size: 2rem;
-							color:black;
-							text-decoration: none;
-							background-color: #ccc;
-							border: 1px solid #ddd;
-							&:before{
-								content:"";
-								display: block;
-								padding-top:2px;
-							}
-						}
-						.empty {
-							display: none;
-						}
-					}
-				}
-			}
+			
 
 		}
 
@@ -430,6 +475,7 @@ body {
 			}
 			.grid {
 				justify-content:center;
+				margin-top: 32px;
 				animation-name: tilesCentered;
 				animation-duration: 1s;
 				animation-timing-function: ease-in-out;
@@ -461,6 +507,22 @@ body {
 					}
 				}
 			}
+
+
+			#wikipedia {
+				animation: appear;
+				animation-duration: 0.5s;
+				animation-fill-mode: forwards;
+			}
+			#btn-next-round {
+				animation: appear;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+
+
+
 			@keyframes tilesCentered {
 				0% {
 
@@ -477,6 +539,10 @@ body {
 				100% {
 					opacity: 0;
 				}
+			}
+			@keyframes appear {
+				from  { opacity: 0; }
+				to { opacity: 1; }
 			}
 			@keyframes tilesShrinkToReadable {
 				from {
@@ -508,17 +574,6 @@ body {
 						opacity: 1;
 					}
 				}
-				@keyframes contentAroundGridShow {
-					0% {
-						
-					}
-					50%{
-						display: block;
-					}
-					100% {
-						display: block;
-					}
-				}
 
 			}
 			#keyboard {
@@ -526,6 +581,25 @@ body {
 				visibility: hidden !important; 
 				opacity: 0 !important;
 			}
+
+
+
+
+
+			&.word-letters-amount-6.round-end-won {
+				footer {
+					ul {
+						li.empty {
+							
+						}
+					}
+				}
+			}
+			&.word-letters-amount-6.round-end-lost {
+				
+			}
+
+
 		}
 
 
