@@ -1,0 +1,141 @@
+
+	/***************************************************************************/
+	/***************************************************************************/
+	/***************************************************************************/
+	/***************************************************************************/
+	/***************************************************************************/
+	/*& is body*/
+	body.round-end {
+		.main-content {
+			/*padding: 15px;*/
+			/*border:10px dotted red;*/
+			h2{
+				/*border:10px dotted yellow;*/
+				top:2px;
+				opacity: 1 !important;
+				height:initial !important;
+			}
+			.grid {
+				justify-content:center;
+				margin-top: 32px;
+				animation-name: tilesCentered;
+				animation-duration: 1s;
+				animation-timing-function: ease-in-out;
+				animation-fill-mode: forwards;
+				& .tile {
+					opacity: 1;
+					animation-name: tilesShrinkToReadable;
+					animation-duration: 1s;
+					animation-timing-function: ease-in-out;
+					animation-fill-mode: forwards;
+					&:before {
+						
+					}
+					.pyramid {
+						animation-name: tilesHideToRevealLetter;
+						animation-delay: 1s;
+						animation-duration: 1s;
+						animation-timing-function: ease-in-out;
+						animation-fill-mode: forwards;
+					}
+					.picture {
+						animation-name: tilesHideToRevealLetter;
+						animation-delay: 1s;
+						animation-duration: 1s;
+						animation-timing-function: ease-in-out;
+						animation-fill-mode: forwards;
+					}
+					label {
+						animation-name: tilesTextShrinkToReadable;
+						animation-duration: 1s;
+						animation-timing-function: ease-in-out;
+						animation-fill-mode: forwards;
+					}
+				}
+			}
+
+
+			#wikipedia {
+				animation: appear;
+				animation-duration: 0.5s;
+				animation-fill-mode: forwards;
+			}
+			#btn-next-round {
+				animation: appear;
+				animation-duration: 0.5s;
+				animation-delay: 0.5s;
+				animation-fill-mode: forwards;
+			}
+
+
+
+			@keyframes tilesCentered {
+				0% {
+
+				}
+
+				100% {
+					height: 25px;
+				}
+			}
+			@keyframes tilesHideToRevealLetter {
+				0% {
+					/*opacity: 1;*/
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes appear {
+				from  { opacity: 0; }
+				to { opacity: 1; }
+			}
+			@keyframes tilesShrinkToReadable {
+				from {
+
+				}
+				to {
+					width: 25px;
+					height: 25px;
+					margin: 0 1px;
+				}
+			}
+			@keyframes tilesTextShrinkToReadable {
+				0% {
+							/*display: block !important;
+							opacity: 1;*/
+						}
+						77% {
+							font-size: 18px;
+							/*font-weight: bold;*/
+						/*display: block !important;
+						opacity: 1;*/
+						/*opacity: 0;*/
+						opacity: inital;
+					}
+					100% {
+						font-size: 18px;
+						/*font-weight: bold;*/
+						/*display: block !important;*/
+						opacity: 1;
+					}
+				}
+
+			}
+			#keyboard {
+				/*border:10px solid green;*/
+				visibility: hidden !important; 
+				opacity: 0 !important;
+			}
+			/*next braket is end of body round-end*/
+		}
+
+		
+
+
+
+
+
+
+
+

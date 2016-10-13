@@ -1,0 +1,294 @@
+	/***************************************************************************/
+	/***************************************************************************/
+	/***************************************************************************/
+	/***************************************************************************/
+	/***************************************************************************/	
+	/*& is body*/
+	/*this shoud be a default value for all elements, so we remove round-playing here*/
+	body.round-playing {
+		.tooltip {
+			/*opacity: 0;*/
+			
+				
+			&#tooltip-keyboard-instructions {
+				top: 40px;
+				left: 40px;
+				animation: showBriefly;
+				animation-duration: 3s;
+				animation-delay: 2s;
+				animation-fill-mode: forwards;
+			}
+			&#tooltip-physical-keyboard-instructions {
+				top: -70px;
+				left: 20%;
+				right: 20%;
+				animation: showBriefly;
+				animation-duration: 3s;
+				animation-delay: 5s;
+				animation-fill-mode: forwards;
+				img {
+					width: 130px;
+					margin-top: 3px;
+					/*display: block;*/
+
+				}
+			}
+		}
+
+		.main-content {
+					display: flex;
+					position: relative;
+					flex-direction: column;
+					height: 100%;
+					clear: both;
+					overflow: hidden;
+					h2 {
+						position: absolute;
+						/*top:2px;*/
+						/*width: 100%;*/
+						text-align: center;
+						margin: 0;
+						/*height:0;*/
+						opacity: 0;
+						transition-property: opacity;
+						transition-duration: 1s;
+					}
+					.grid {
+						margin-top: 0px;
+						justify-content:center;
+						height: 100%;
+						clear: both;
+						overflow: hidden;
+						position: relative;
+						display: flex;
+						display: -webkit-flex;
+						flex-flow: row wrap;
+						align-content:stretch;
+						& .tile {
+							position: relative;
+							opacity: 1;
+							
+							&:before {
+								animation: tilesNumberFontSize;
+								animation-duration: 1s;
+								animation-fill-mode: forwards;
+								
+							}
+
+							& > * {
+								position: absolute;
+							}
+
+							&.played {
+								.pyramid {
+									animation: fall-on-z-axis;
+									animation-duration: 1s;
+									animation-fill-mode: forwards;
+								}
+								
+							}
+
+
+							
+
+
+							.pyramid {
+								width: 100%;
+								height: 100%;
+								z-index: 999;
+							}
+							.picture {
+								width: 100%;
+								height: 100%;
+								background-position: center center;
+								background-size: cover;
+								z-index: 888;
+							}
+							label {
+								display: block;
+								height: 100%;
+								font-size: 3.4rem;
+								text-align: center;
+								width: 100%;
+								z-index: 777;
+								&:before {
+									content:"";
+									display: block;
+									height: 10%;
+								}
+							}
+						}
+						& .tile {
+							.pyramid {opacity:1;}
+							.picture {opacity:0;}
+							label {opacity:0;}
+						}
+						/*& .tile:nth-child(1){
+							.pyramid {opacity:1;}
+							.picture {opacity:0;}
+							label {opacity:0;}
+						}
+						& .tile:nth-child(2){
+							.pyramid {opacity:0;}
+							.picture {opacity:0;}
+							label {opacity:1;}
+						}
+						& .tile:nth-child(3){
+							.pyramid {opacity:0;}
+							.picture {opacity:1;}
+							label {opacity:0;}
+						}
+						& .tile:nth-child(4){
+							.pyramid {opacity:1;}
+							.picture {opacity:0;}
+							label {opacity:0;}
+						}
+						& .tile:nth-child(5){
+							.pyramid {opacity:0;}
+							.picture {opacity:0;}
+							label {opacity:1;}
+						}
+						& .tile:nth-child(6){
+							.pyramid {opacity:0;}
+							.picture {opacity:1;}
+							label {opacity:0;}
+						}*/
+
+						&.grid-4-tiles {
+							display: none;
+							& .tile {width: 50%;height: 50%;}
+						}
+						&.grid-6-tiles {
+							/*display: none;*/
+							& .tile {width: 33.333%;height: 50%;}
+						}
+						&.grid-8-tiles {
+							display: none;
+							& .tile {width: 25%;height: 50%;}
+						}
+						&.grid-9-tiles {
+							display: none;
+							& .tile {width: 33.333%;height: 33.333%;}
+						}
+						&.grid-10-tiles {
+							display: none;
+							& .tile {width: 20%;height: 50%;}
+						}
+					}
+					#wikipedia {
+						display: none;
+						opacity: 0;
+						background-color: white;
+						color: #666;
+						border:1px solid #ccc;
+						border-radius: 5px;
+						padding: 5px;
+						margin: 5px;
+						font-size: 0.8rem;
+						overflow-y: scroll;
+						height: 150px;
+					}
+					#btn-next-round {
+						display: none;
+						opacity: 0;
+					}
+					/*****************************************************************************************************/
+					#keyboard {
+						position: relative;
+						opacity: 1; 
+						visibility: visible; 
+						transition: visibility 0.3s linear, opacity 0.3s linear; 
+						clear: both;
+						.row {
+							display: flex;
+							justify-content:space-around;
+							height: 44px;
+							.key {
+								display: flex;
+								width: 100%;
+								float: left;
+								text-align: center;
+
+								transition : opacity 500ms ease-out; 
+								-webkit-transition : opacity 500ms ease-out; 
+								-moz-transition : opacity 500ms ease-out;
+								-o-transition : opacity 500ms ease-out;  
+
+
+								&:hover {
+									opacity: 0.5;
+								}
+								a {
+									display: block;
+									width: 100%;
+									font-size: 2rem;
+									color:black;
+									text-decoration: none;
+									background-color: #ccc;
+									border: 1px solid #ddd;
+									&:before{
+										content:"";
+										display: block;
+										padding-top:2px;
+									}
+								}
+								.empty {
+									display: none;
+								}
+							}
+						
+					}
+					/*next braket is end of keyboard*/
+				}
+				
+				/* next bracket is end of main-content*/
+			}
+			@keyframes showBriefly {
+				0%  { 
+					opacity: 0; 
+					/*visibility: hidden;*/
+				}
+				20%  { 
+					opacity: 1; 
+					/*visibility: visible;*/
+				}
+				80%  { 
+					opacity: 1; 
+					/*visibility: visible;*/
+				}
+				100% { 
+					opacity: 0; 
+					visibility: hidden;
+				}
+			}
+			@keyframes appear {
+				from  { opacity: 0; }
+				to { opacity: 1; }
+			}
+			@keyframes disappear {
+				from  { opacity: 1; }
+				to { opacity: 0; }
+			}
+			@keyframes fall-on-z-axis {
+				from  { 
+
+				}
+				to { 
+					transform: rotate(360deg);
+					width: 20px;
+					height: 20px;
+					opacity: 0;
+				}
+			}
+			@keyframes tilesNumberFontSize {
+										0% {
+												/*font-size: 7rem;*/
+												opacity: 0.7;
+											}
+										100% {
+												font-size: 6.5rem;
+												opacity: 0.2;
+											}
+								}
+	}
+	
